@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.pooran.jmeter</groupId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <artifactId>Jmeter-Websocket-Sampler</artifactId>
+
+  <name>Jmeter-Websocket-Sampler</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <jmeterVersion>2.9</jmeterVersion>
+      <jettyVersion>8.1.9.v20130131</jettyVersion>
+  </properties>
+  
+
+  <dependencies>
+      <dependency>
+          <groupId>org.apache.jmeter</groupId>
+          <artifactId>ApacheJMeter</artifactId>
+          <version>${jmeterVersion}</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.jmeter</groupId>
+          <artifactId>ApacheJMeter_http</artifactId>
+          <version>${jmeterVersion}</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.jmeter</groupId>
+          <artifactId>ApacheJMeter_functions</artifactId>
+          <version>${jmeterVersion}</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-websocket</artifactId>
+          <version>${jettyVersion}</version>
+      </dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.11</version>
+          <scope>test</scope>
+      </dependency>
+  </dependencies>
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>perform</goal>
+						</goals>
+						<configuration>
+							<pomFileName>./pom.xml</pomFileName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>		  
+</project>
